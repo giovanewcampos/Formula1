@@ -51,7 +51,7 @@ public class Conexao {
     public static void main(String[] args) {
         try {
             getConexao();
-            System.out.println("Feito!");
+            System.out.println("Boa meu Guri!");
         } catch (SQLException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
