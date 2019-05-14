@@ -8,6 +8,7 @@ package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,5 +37,9 @@ public class PaisDao {
         }else{
             JOptionPane.showMessageDialog(null, "Erro!");
         }
+    }
+
+    public static List<String[]> consultar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
