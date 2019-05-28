@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 public class PaisDao {
 
     public static boolean inserir(String sigla, String nome) {
-        String sql = "INSERT INTO pais (sigla, nome) VALUES (?, ?)";
+        String sql = "INSERT INTO pais (sigl, nome) VALUES (?, ?)";
         try {
             PreparedStatement ps = Conexao.Conexao.getConexao().prepareStatement(sql);
             ps.setString(1, sigla);
@@ -57,7 +57,7 @@ public class PaisDao {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
     }
-    */
+    
     public static void main(String[] args) {
         boolean resultado = alterar("BR", "Brazil");
         if (resultado) {
@@ -67,7 +67,7 @@ public class PaisDao {
         }
     }
 
-
+*/
    public static List<String[]> consultar() {
         List<String[]> resultados = new ArrayList<>();
         String sql = "SELECT sigla, nome FROM pais";

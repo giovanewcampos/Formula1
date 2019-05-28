@@ -16,6 +16,7 @@ public class PanelCorridaPiloto extends javax.swing.JPanel {
      */
     public PanelCorridaPiloto() {
         initComponents();
+       
     }
 
     /**

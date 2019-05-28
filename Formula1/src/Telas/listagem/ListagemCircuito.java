@@ -19,6 +19,8 @@ public class ListagemCircuito extends javax.swing.JDialog {
     public ListagemCircuito(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

@@ -20,6 +20,8 @@ public class ManutencaoPais extends javax.swing.JDialog {
     public ManutencaoPais(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -135,7 +137,7 @@ public class ManutencaoPais extends javax.swing.JDialog {
         if (resultado){
             JOptionPane.showMessageDialog(null, "Boa meu Consagrado, deu certo!");
         }else{
-            JOptionPane.showMessageDialog(null, "Erro!");
+            JOptionPane.showMessageDialog(null, "Você é um Fracassado!");
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 

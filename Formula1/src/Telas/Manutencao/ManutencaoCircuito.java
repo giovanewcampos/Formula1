@@ -20,6 +20,8 @@ public class ManutencaoCircuito extends javax.swing.JDialog {
     public ManutencaoCircuito(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
