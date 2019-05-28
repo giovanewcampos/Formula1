@@ -7,12 +7,18 @@ package Telas.Manutencao;
 
 import static dao.PaisDao.inserir;
 import javax.swing.JOptionPane;
+import telas.listagem.ListagemPais;
+
+
+
 
 /**
  *
  * @author Administrador
  */
 public class ManutencaoPais extends javax.swing.JDialog {
+    
+    private ListagemPais listagem;
 
     /**
      * Creates new form ManutencaoPais
@@ -22,6 +28,18 @@ public class ManutencaoPais extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+    }
+    
+     public ManutencaoPais(java.awt.Frame parent, boolean modal, ListagemPais listagem) {
+        super(parent, modal);
+        initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        this.listagem = listagem;
+        
+        btnAlterar.setEnabled(false);
+        btnExcluir.setEnabled(false);
+        
     }
 
     /**
@@ -38,9 +56,9 @@ public class ManutencaoPais extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jtfSigla = new javax.swing.JTextField();
         jtfNome = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        btnAdnicionar = new javax.swing.JToggleButton();
+        btnAlterar = new javax.swing.JToggleButton();
+        btnExcluir = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -60,16 +78,16 @@ public class ManutencaoPais extends javax.swing.JDialog {
             }
         });
 
-        jToggleButton1.setText("Adicionar");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAdnicionar.setText("Adicionar");
+        btnAdnicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnAdnicionarActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setText("Alterar");
+        btnAlterar.setText("Alterar");
 
-        jToggleButton3.setText("Excluir");
+        btnExcluir.setText("Excluir");
 
         jToggleButton4.setText("Cancelar");
 
@@ -85,11 +103,11 @@ public class ManutencaoPais extends javax.swing.JDialog {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAdnicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton4)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -118,9 +136,9 @@ public class ManutencaoPais extends javax.swing.JDialog {
                     .addComponent(jLabel3))
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton2)
-                    .addComponent(jToggleButton3)
+                    .addComponent(btnAdnicionar)
+                    .addComponent(btnAlterar)
+                    .addComponent(btnExcluir)
                     .addComponent(jToggleButton4))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
@@ -132,14 +150,14 @@ public class ManutencaoPais extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfSiglaActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void btnAdnicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdnicionarActionPerformed
         boolean resultado = inserir(jtfSigla.getText(), jtfNome.getText());
         if (resultado){
             JOptionPane.showMessageDialog(null, "Boa meu Consagrado, deu certo!");
         }else{
             JOptionPane.showMessageDialog(null, "Você é um Fracassado!");
         }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_btnAdnicionarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,12 +202,12 @@ public class ManutencaoPais extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnAdnicionar;
+    private javax.swing.JToggleButton btnAlterar;
+    private javax.swing.JToggleButton btnExcluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JTextField jtfNome;
     private javax.swing.JTextField jtfSigla;

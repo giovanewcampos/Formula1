@@ -115,7 +115,7 @@ public class ListagemPais extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ManutencaoPais manutencao = new ManutencaoPais (null, true);
+        ManutencaoPais manutencao = new ManutencaoPais (null, true, this);
         manutencao.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

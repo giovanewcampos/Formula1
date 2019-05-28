@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 public class PaisDao {
 
     public static boolean inserir(String sigla, String nome) {
-        String sql = "INSERT INTO pais (sigl, nome) VALUES (?, ?)";
+        String sql = "INSERT INTO pais (sigla, nome) VALUES (?, ?)";
         try {
             PreparedStatement ps = Conexao.Conexao.getConexao().prepareStatement(sql);
             ps.setString(1, sigla);
