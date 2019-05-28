@@ -5,7 +5,6 @@
  */
 package dao;
 
-
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -30,14 +29,40 @@ public class PaisDao {
             return false;
         }
     }
-    public static void main(String[] args) {
+
+    public static boolean alterar(String sigla, String nome) {
+        String sql = "UPDATE pais SET nome = ? WHERE sigla = ?";
+        try {
+            PreparedStatement ps = Conexao.Conexao.getConexao().prepareStatement(sql);
+            ps.setString(1, nome);
+            ps.setString(2, sigla);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    /*
+        public static void main(String[] args) {
         boolean resultado = inserir("BR", "Brasil");
-        if (resultado){
+        if (resultado) {
             JOptionPane.showMessageDialog(null, "Boa meu Consagrado, deu certo!");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
     }
+    */
+    public static void main(String[] args) {
+        boolean resultado = alterar("BR", "Brazil");
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "Deu certo Piazão!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Que pena, você falhou!");
+        }
+    }
+
 
     public static List<String[]> consultar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
